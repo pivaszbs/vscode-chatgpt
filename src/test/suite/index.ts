@@ -1,6 +1,6 @@
-import * as path from 'path';
-import * as Mocha from 'mocha';
-import * as glob from 'glob';
+import glob from 'glob';
+import Mocha from 'mocha';
+import path from 'path';
 
 export function run(): Promise<void> {
 	// Create the mocha test
@@ -18,7 +18,7 @@ export function run(): Promise<void> {
 			}
 
 			// Add files to the test suite
-			files.forEach(f => mocha.addFile(path.resolve(testsRoot, f)));
+			files.forEach((f: string) => mocha.addFile(path.resolve(testsRoot, f)));
 
 			try {
 				// Run the mocha test
